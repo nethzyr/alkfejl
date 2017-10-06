@@ -25,7 +25,7 @@ böngészhetik a híreket.
   
  A grafikus felületet tehát a portál munkatársai használják a cikkek írására, illetve
  feltöltésére.
-
+ 
     • A program használatához először be kell jelentkeznie a munkatársnak a
     felhasználónév és a jelszó megadásával. Ezt követően válnak elérhetővé a
     szerkesztési funkciók (illetve a kijelentkezés).
@@ -41,10 +41,9 @@ böngészhetik a híreket.
     • Cikk módosításánál is ugyanezt a felületet kapjuk vissza, de már előre kitöltve.
 
     • Cikk törlésénél a program megerősítést kér a felhasználótól.
-
- Az adatbázis az alábbi adatokat tárolja:
+    
+Az adatbázis az alábbi adatokat tárolja:
 
     • felhasználó (név, azonosító, jelszó);
 
     • cikkek (cím, szerző
-
