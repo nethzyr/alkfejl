@@ -3,7 +3,7 @@
 Készítsük el egy online portál hírkezelő rendszerét, ahol a munkatársak
 feltölthetik cikkeiket, amelyek megjelennek egy webes felületen.
 
-A webes felület tartalmazza magát a hírportált, ahol az olvasok tetszőlegesen
+A webes felület tartalmazza magát a hírportált, ahol az olvasók tetszőlegesen
 böngészhetik a híreket.
 
     • A főoldalon megjelennek a legfrissebb hírek (cím és összefoglaló, dátum
@@ -46,4 +46,20 @@ Az adatbázis az alábbi adatokat tárolja:
 
     • felhasználó (név, azonosító, jelszó);
 
-    • cikkek (cím, szerző
+    • cikkek (cím, szerző);
+    
+    • képek (cikk azonosító, kép);
+    
+Szakterületi fogalmak:
+
+    • Cikk: Önálló írás egy újságban, írott sajtóban közölt írás egy témában.
+    
+    • Hírportál: Egy honlap, amely a nyomtatott újságot valósítja meg számítógéppel elérhető, olvasható és kinyomtatható formában.
+    
+    • Archívum: Írott vagy más formában rögzített adatok tárolására használt hely.
+    
+Szerepkörök:
+
+    • Munkatárs: Bejelentkezés után új cikket tölthet fel, meglévőt szerkeszthet, vagy törölhet.
+    
+    • Olvasó: Böngészheti a meglévő cikkeket, és képeket.
