@@ -1,23 +1,21 @@
 package hu.elte.alkfejl.hirportal.controller;
 
-import hu.elte.alkfejl.hirportal.service.StudentService;
+import hu.elte.alkfejl.hirportal.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-public class StudentController {
+public class UserController {
     
     @Autowired
-    private StudentService studentService;
+    private UserService userService;
     
-    @GetMapping("/student")
-    public String studentList(Model model) {
-        model.addAttribute("title", "Student list");
-        model.addAttribute("students", studentService.studentNamesStartingWith("John"));
+    @GetMapping("/user")
+    public String userList(Model model) {
+        model.addAttribute("title", "User list");
+        model.addAttribute("users", userService.userNamesStartingWith("John"));
         return "list";
     }
 }

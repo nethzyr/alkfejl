@@ -1,5 +1,5 @@
-insert into student (first_name, last_name, neptun) values ('John', 'Wick', 'abcdef1');
-insert into student (first_name, last_name, neptun) values ('John', 'Doe', 'abcdef2');
-insert into student (first_name, last_name, neptun) values ('Johnathan', 'Apple', 'abcdef3');
-insert into student (first_name, last_name, neptun) values ('Bob', null, 'abcdef4');
-insert into student (first_name, last_name, neptun) values ('Ian', 'Thorne', 'abcdef5');
+insert into user (first_name, last_name, role) values ('John', 'Wick', 'GUEST');
+insert into user (first_name, last_name, role) values ('John', 'Doe', 'GUEST');
+insert into user (first_name, last_name, role) values ('Johnathan', 'Apple', 'GUEST');
+insert into user (first_name, last_name, role) values ('Bob', null, 'GUEST');
+insert into user (first_name, last_name, role) values ('Ian', 'Thorne', 'GUEST');

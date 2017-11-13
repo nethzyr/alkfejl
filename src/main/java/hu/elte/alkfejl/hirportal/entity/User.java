@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +21,7 @@ public class Student {
     @Column(name="last_name", nullable=true, length=100)
     private String lastname;
     
-    @Column(nullable=false, length=7, unique = true)
-    private String neptun;
+    @Column(name="role", nullable=true, length=100)
+    private String role;
+
 }
