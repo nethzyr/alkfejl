@@ -15,7 +15,7 @@ public class UserController {
     @GetMapping("/user")
     public String userList(Model model) {
         model.addAttribute("title", "User list");
-        model.addAttribute("users", userService.userNamesStartingWith("John"));
-        return "list";
+        model.addAttribute("users", userService.userNamesStartingWith(""));
+        return "userlist";
     }
 }
