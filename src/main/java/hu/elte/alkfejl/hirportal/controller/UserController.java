@@ -10,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
-
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -26,7 +24,7 @@ public class UserController {
         return "userlist";
     }
 
-    @GetMapping("/greet")
+    @GetMapping("/greeting")
     public String greeting(@RequestParam(value = "name", required = false, defaultValue = "World") String name, Model model) {
         model.addAttribute("name", name);
         return "greeting";
@@ -61,6 +59,6 @@ public class UserController {
     }
 
     private String redirectToGreeting(@ModelAttribute User user) {
-        return "redirect:/user/greet?name=" + user.getFirstname();
+        return "redirect:/user/greeting?name=" + user.getFirstname();
     }
 }

@@ -16,13 +16,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
+    @Column(name="username", nullable=false, length=100)
+    private String username;
+    
     @Column(name="first_name", nullable=false, length=100)
     private String firstname;
     
     @Column(name="last_name", nullable=true, length=100)
     private String lastname;
     
-    @Column(name="password", nullable=true, length=100)
+    @Column(name="password", nullable=false, length=100)
     private String password;
     
     @Enumerated(EnumType.STRING)
