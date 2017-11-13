@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "USER")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +25,7 @@ public class User {
     @Column(name="password", nullable=true, length=100)
     private String password;
     
-    @Column(name="role", nullable=true, length=100)
-    private String role;
-
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
 }

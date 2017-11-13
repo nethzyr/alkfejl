@@ -17,4 +17,12 @@ public class UserService {
     public List<User> userNamesStartingWith(String segment) {
         return userRepository.findByFirstNameSegment(segment);
     }
+
+    public void register(User user) {
+        userRepository.save(user);
+    }
+
+    public boolean isValid(User user) {
+        return userRepository.findByFirstnameAndPassword(user.getFirstname(), user.getPassword()).isPresent();
+    }
 }
