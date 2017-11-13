@@ -21,6 +21,9 @@ public class User {
     @Column(name="last_name", nullable=true, length=100)
     private String lastname;
     
+    @Column(name="password", nullable=true, length=100)
+    private String password;
+    
     @Column(name="role", nullable=true, length=100)
     private String role;
 
