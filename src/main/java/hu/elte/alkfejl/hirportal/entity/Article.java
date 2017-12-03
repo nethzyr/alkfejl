@@ -40,8 +40,8 @@ public class Article {
     @Column(name="date", nullable = false)
     private Timestamp date;
     
-    @Column(name="text", columnDefinition="CLOB NOT NULL")
-    private String text;
+    @Column(name="body", columnDefinition="CLOB NOT NULL")
+    private String body;
 
     @Column(name="thumbnail", nullable=false, length=200)
     private String thumbnail;

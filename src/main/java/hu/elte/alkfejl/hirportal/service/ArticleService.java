@@ -38,20 +38,17 @@ public class ArticleService {
         return articleRepository.save(article);
     }
     
-    public Article create(Article article, User user) {
+    /*public Article create(Article article, User user) {
         article.setDate(Timestamp.valueOf(LocalDateTime.now()));
         article.setUser(user);
         return articleRepository.save(article);
-    }
+    }*/
     
-    public Iterable<Article> listByRole(User user) {
-        Role role = user.getRole();
-        if (role == Role.EDITOR) {
-            return articleRepository.findAllByUser(user);
-        } 
-        else if (role == Role.ADMIN) {
-            return articleRepository.findAll();
-        }
-        return Collections.emptyList();
+    public Iterable<Article> list() {
+        return articleRepository.findAll();
+    }
+
+    public Iterable<Article> read(long id) {
+        return articleRepository.findAllById(id);
     }
 }
