@@ -1,7 +1,10 @@
 package hu.elte.alkfejl.hirportal.repository;
 
 import hu.elte.alkfejl.hirportal.entity.Article;
+import hu.elte.alkfejl.hirportal.entity.User;
+
 import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,4 +15,6 @@ public interface ArticleRepository extends CrudRepository<Article, Long> {
 
     @Query("select u.text from Article u where u.text like ?1%")
     List<Article> findByArticleSegment(String firstName);
+    
+    Iterable<Article> findAllByUser(User user);
 }

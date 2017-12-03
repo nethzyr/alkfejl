@@ -1,9 +1,15 @@
 package hu.elte.alkfejl.hirportal.service;
 
 import hu.elte.alkfejl.hirportal.entity.Article;
-import java.util.List;
-
+import hu.elte.alkfejl.hirportal.entity.User;
+import hu.elte.alkfejl.hirportal.entity.User.Role;
 import hu.elte.alkfejl.hirportal.repository.ArticleRepository;
+
+import java.util.List;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Collections;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
@@ -21,5 +27,31 @@ public class ArticleService {
 
     public List<Article> articleStartingWith(String segment) {
         return articleRepository.findByArticleSegment(segment);
+    }
+    
+    public void delete(long id) {
+        articleRepository.delete(id);
+    }
+   
+    public Article edit(long id, Article article) {
+        Article currentArticle = articleRepository.findOne(id);
+        return articleRepository.save(article);
+    }
+    
+    public Article create(Article article, User user) {
+        article.setDate(Timestamp.valueOf(LocalDateTime.now()));
+        article.setUser(user);
+        return articleRepository.save(article);
+    }
+    
+    public Iterable<Article> listByRole(User user) {
+        Role role = user.getRole();
+        if (role == Role.EDITOR) {
+            return articleRepository.findAllByUser(user);
+        } 
+        else if (role == Role.ADMIN) {
+            return articleRepository.findAll();
+        }
+        return Collections.emptyList();
     }
 }

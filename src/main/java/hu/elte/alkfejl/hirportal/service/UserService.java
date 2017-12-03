@@ -1,15 +1,20 @@
 package hu.elte.alkfejl.hirportal.service;
 
 import hu.elte.alkfejl.hirportal.entity.User;
+import hu.elte.alkfejl.hirportal.exception.UserNotValidException;
+import hu.elte.alkfejl.hirportal.repository.UserRepository;
+
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
-import hu.elte.alkfejl.hirportal.repository.UserRepository;
 
 @Service
 @SessionScope
 public class UserService {
+    
+    private User user;
     
     @Autowired
     private UserRepository userRepository;
@@ -18,11 +23,31 @@ public class UserService {
         return userRepository.findByFirstNameSegment(segment);
     }
 
-    public void register(User user) {
-        userRepository.save(user);
+    public User register(User user) {
+        user.setRole(User.Role.READER);
+        return this.user = userRepository.save(user);
+    }
+    
+    public User login(User user) throws UserNotValidException {
+        if (isValid(user)) {
+            return this.user = userRepository.findByUsername(user.getUsername());
+        }
+        throw new UserNotValidException();
     }
 
-    public boolean isValid(User user) {
-        return userRepository.findByFirstnameAndPassword(user.getFirstname(), user.getPassword()).isPresent();
+    private boolean isValid(User user) {
+        return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword()).isPresent();
+    }
+    
+     public void logout() {
+        user = null;
+    }
+     
+    public boolean isLoggedIn() {
+        return user != null;
+    }
+    
+    public User getLoggedInUser() {
+        return user;
     }
 }
