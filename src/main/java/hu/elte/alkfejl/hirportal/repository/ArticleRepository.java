@@ -13,8 +13,9 @@ public interface ArticleRepository extends CrudRepository<Article, Long> {
     @Query("select t.title from Article t where t.title like ?1%")
     List<Article> findByTitleSegment(String firstName);
 
-    @Query("select u.text from Article u where u.text like ?1%")
+    @Query("select u.body from Article u where u.body like ?1%")
     List<Article> findByArticleSegment(String firstName);
     
     Iterable<Article> findAllByUser(User user);
+    Iterable<Article> findAllById (long id);
 }
