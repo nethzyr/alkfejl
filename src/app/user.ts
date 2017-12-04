@@ -18,7 +18,7 @@ export class User {
         this.firstName = firstName || '';
         this.lastName = lastName || '';
         this.password = password || '';
-        this.role = role || '';
+        this.role = role || 'GUEST';
         this.username = username || '';
     }
 }

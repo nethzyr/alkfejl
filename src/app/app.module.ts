@@ -12,6 +12,8 @@ import { ArticleService } from './article.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './menu/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,11 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     ArticleListComponent,
     ArticleItemComponent,
     ArticleDetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     RoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ArticleService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
