@@ -11,7 +11,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -25,7 +27,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class User {
     
-    @OneToMany(targetEntity = Article.class, mappedBy = "user")
+   @ManyToMany
+    @JoinTable(name="USER_ARTICLE",
+        joinColumns=
+            @JoinColumn(name="USER", referencedColumnName="ID"),
+        inverseJoinColumns=
+            @JoinColumn(name="ARTICLE", referencedColumnName="ID")
+        )
     @JsonIgnore
     private List<Article> articles;
     
