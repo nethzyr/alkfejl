@@ -72,12 +72,20 @@ export class ArticleService {
     return this.articles[this.articles.findIndex(x => x.id === id)];
   }*/
 
-  getArticle(id): Observable<Article> {
-    return this.http.get<Article>(`api/article/${id}`);
+  getArticle(id): Promise<Article> {
+    return this.http.get<Article>(`api/article/${id}`).toPromise();
   }
 
-  addArticle(article: Article) {
+  /*addArticle(article: Article) {
     this.articles.push(article);
+  }*/
+
+  editArticle(id: number, article: Article): Promise<Article> {
+    return this.http.put<Article>(
+      `api/article/${id}`,
+      article,
+      httpOptions
+    ).toPromise();
   }
 
 }

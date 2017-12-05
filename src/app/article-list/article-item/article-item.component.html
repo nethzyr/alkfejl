@@ -1,5 +1,6 @@
+<button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" [routerLink]="['/article', article.id, 'edit']">Edit</button>
 <a 
-[routerLink]="['/article', article.id]" class="list-group-item clearfix">
+[routerLink]="['/article', article.id ]" class="list-group-item clearfix">
 <div class="pull-left">
   <h4 class="list-group-item-heading">{{ article.title }}</h4>
 </div>
