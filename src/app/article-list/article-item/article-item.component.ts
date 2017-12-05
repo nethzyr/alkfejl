@@ -16,7 +16,6 @@ export class ArticleItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.authService.user.firstName);
   }
 
 }

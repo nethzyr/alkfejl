@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
 import { tap } from 'rxjs/operators';
@@ -13,7 +13,7 @@ export class AuthService {
 
   isLoggedIn = false;
   redirectUrl: String;
-  user: User;
+  user: User = new User;
 
   constructor(
     private http: HttpClient
