@@ -29,7 +29,6 @@ export class ArticleEditComponent implements OnInit {
     .switchMap(async (params: ParamMap) => {
       const id = +params.get('id');
       this.article = await this.articleService.getArticle(id);
-      console.log(this.article);
       return Observable.of({});
     })
     .subscribe();

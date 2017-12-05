@@ -19,13 +19,10 @@ export class AuthGuard implements CanActivate {
         if (next.data.roles && next.data.roles.includes(this.authService.user.role)) {
           return true;
         } else {
-          // this.router.navigate(['/login']);
-          console.log('No permission');
           return false;
         }
       }
       this.authService.redirectUrl = state.url;
-      // this.router.navigate(['/login']);
       return false;
   }
 }
