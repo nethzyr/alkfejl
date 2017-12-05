@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '../../article';
 import { AuthService } from '../../auth.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ArticleService } from '../../article.service';
+// tslint:disable-next-line:import-blacklist
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-article-item',
@@ -10,12 +14,21 @@ import { AuthService } from '../../auth.service';
 export class ArticleItemComponent implements OnInit {
 
   @Input() article: Article;
+  category: number;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
+    private articleService: ArticleService,
     private authService: AuthService
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap
+    .switchMap(async (params: ParamMap) => {
+      this.category = +params.get('category');
+      return Observable.of({});
+    })
+    .subscribe();
   }
 
 }

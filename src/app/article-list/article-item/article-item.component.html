@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="article.category === category || category === 0">
   <div class="row justify-content-md-center">
     <button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" [routerLink]="['/article', article.id, 'edit']">Edit</button>
     <a [routerLink]="['/article', article.id ]" class="list-group-item clearfix">

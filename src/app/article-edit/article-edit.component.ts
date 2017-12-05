@@ -35,6 +35,7 @@ export class ArticleEditComponent implements OnInit {
   }
 
   async submit(f) {
+    console.log(this.article.category);
     if (f.invalid) {
       return;
     }

@@ -17,6 +17,11 @@ const routes: Routes = [{
   pathMatch: 'full'
 },
 {
+  path: 'dashboard/:category',
+  component: MainPageComponent,
+  pathMatch: 'full'
+},
+{
   path: 'article/:id',
   component: ArticleDetailComponent,
   pathMatch: 'full'

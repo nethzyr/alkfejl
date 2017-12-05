@@ -17,6 +17,15 @@
         <textarea spellcheck="false" cols="40" rows="15" type="text" name="body" [(ngModel)]="article.body" class="form-control" id="body" placeholder="Body" required></textarea>
       </div>
       <div class="form-group">
+        <label>Kategória</label>
+        <select class="form-control" name="category" id="category" [(ngModel)]="article.category">
+          <option value=1>Tudomány</option>
+          <option value=2>Sport</option>
+          <option value=3>Üzlet</option>
+          <option value=4>Szórakozás</option>
+        </select>
+      </div>
+      <div class="form-group">
         <button type="submit" class="btn btn-basic">Submit</button>
       </div>
     </form>
