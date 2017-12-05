@@ -12,7 +12,7 @@ const httpOptions = {
 export class ArticleService {
 
   articles: Article[] = [
-    {
+    /*{
       id: 1,
       author: '',
       date: Date.now(),
@@ -53,7 +53,7 @@ export class ArticleService {
       title: 'TestTitle5',
       thumbnail: 'https://3.bp.blogspot.com/-M-OKuEjvivA/Tc6hCSmMXNI/AAAAAAAAA-o/cTtWdZMOxlM/s1600/53.gif',
       body: 'TestBody5'
-    },
+    },*/
   ];
 
   constructor(
