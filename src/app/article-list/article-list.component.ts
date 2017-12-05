@@ -9,7 +9,9 @@ import { ArticleService } from '../article.service';
 })
 export class ArticleListComponent implements OnInit {
 
+  selectedStatus = '';
   articles: Article[];
+  filteredIssues: Article[];
 
   constructor(
     private articleService: ArticleService
@@ -20,6 +22,18 @@ export class ArticleListComponent implements OnInit {
     .subscribe(articles => {
       this.articles = articles;
     });
+  }
+
+  onFilterChange(status: string) {
+    this.selectedStatus = status;
+    this.filterIssues();
+  }
+
+  filterIssues() {
+    this.filteredIssues = this.selectedStatus === ''
+      ? this.articles
+      : this.articles.filter(
+          article => article.title === this.selectedStatus);
   }
 
 }

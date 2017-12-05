@@ -14,8 +14,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ArticleDetailComponent implements OnInit {
 
-  // article: Article = new Article(0, '', Date.now(), '', '', '');
   article: Article = new Article();
+  date: Date;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,6 +27,7 @@ export class ArticleDetailComponent implements OnInit {
     .switchMap(async (params: ParamMap) => {
       const id = +params.get('id');
       this.article = await this.articleService.getArticle(id);
+      this.date = new Date(this.article.date);
       return Observable.of({});
     })
     .subscribe();

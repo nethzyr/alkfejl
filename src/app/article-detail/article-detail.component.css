@@ -1,3 +1,10 @@
 h2 {
     text-align: center;
+    margin-bottom: 15px;
+}
+img {
+    margin: 15px 15px;
+}
+#date {
+    font-size: 70%;
 }

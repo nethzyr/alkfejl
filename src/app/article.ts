@@ -5,6 +5,7 @@ export class Article {
     public title: String = '';
     public thumbnail: String = '';
     public body: String = '';
+    public category = 1;
 
     /*constructor(id?: number, author?: String, date?: number, title?: String, thumbnail?: String, body?: String) {
         this.id = id || 0;
