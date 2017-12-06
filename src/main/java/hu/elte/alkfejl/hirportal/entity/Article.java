@@ -1,9 +1,8 @@
 package hu.elte.alkfejl.hirportal.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -17,23 +16,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Article {
-    
-    @ManyToMany(mappedBy="articles")
-    private List<User> users;
-    
+
+    @JoinColumn
+    @ManyToOne(targetEntity = User.class, optional = false)
+    @JsonIgnoreProperties("articles")
+    private User user;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    
+
     @Column(name="title", nullable=false, length=100)
     private String title;
-    
+
     @Column(name="author", nullable=true, length=100)
     private String author;
-    
+
     @Column(name="date", nullable = false)
     private Timestamp date;
-    
+
     @Column(name="body", columnDefinition="CLOB NOT NULL")
     private String body;
 
