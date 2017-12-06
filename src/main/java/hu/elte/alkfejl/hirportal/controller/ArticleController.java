@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.*;
 
+import static hu.elte.alkfejl.hirportal.entity.User.Role.*;
+
 @RestController
 @RequestMapping("/api/article")
 public class ArticleController {
@@ -33,14 +35,14 @@ public class ArticleController {
     public ResponseEntity<Iterable<Article>> list() {
         return ResponseEntity.ok(articleService.list());
     }
-    
+
     @Role({ADMIN, READER})
     @GetMapping("/{id}")
     private ResponseEntity<Article> read(@PathVariable String id) {
         Iterable<Article> read = articleService.read(Integer.parseInt(id));
         return ResponseEntity.ok(read.iterator().next());
     }
-    
+
     @Role(ADMIN)
     @PutMapping("/{id}")
     private ResponseEntity<Article> edit(@PathVariable long id, @RequestBody Article article) {
