@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '../../article';
 import { AuthService } from '../../auth.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ArticleService } from '../../article.service';
 // tslint:disable-next-line:import-blacklist
 import { Observable } from 'rxjs';
@@ -19,7 +19,8 @@ export class ArticleItemComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private articleService: ArticleService,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: Router
   ) { }
 
   ngOnInit() {
@@ -29,6 +30,15 @@ export class ArticleItemComponent implements OnInit {
       return Observable.of({});
     })
     .subscribe();
+  }
+
+  async deleteArticle() {
+    try {
+      await this.articleService.deleteArticle(this.article.id);
+      console.log('rip', this.article.title);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 }

@@ -12,7 +12,6 @@ const httpOptions = {
 export class AuthService {
 
   isLoggedIn = false;
-  redirectUrl: String;
   user: User = new User;
 
   constructor(

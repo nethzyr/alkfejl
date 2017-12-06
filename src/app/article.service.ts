@@ -88,4 +88,11 @@ export class ArticleService {
     ).toPromise();
   }
 
+  deleteArticle(id: number) {
+    return this.http.delete<Article>(
+      `api/article/${id}`,
+      httpOptions
+    ).toPromise();
+  }
+
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, ParamMap } from '@angular/router';
+import { ActivatedRoute, Params, ParamMap, Router } from '@angular/router';
 // tslint:disable-next-line:import-blacklist
 import { Article } from '../article';
 import { Location } from '@angular/common';
@@ -21,6 +21,7 @@ export class ArticleEditComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private articleService: ArticleService,
+    private router: Router,
     private location: Location
   ) { }
 
@@ -35,7 +36,6 @@ export class ArticleEditComponent implements OnInit {
   }
 
   async submit(f) {
-    console.log(this.article.category);
     if (f.invalid) {
       return;
     }
@@ -44,7 +44,7 @@ export class ArticleEditComponent implements OnInit {
     }/* else {
       await this.articleService.addIssue(art);
     }*/
-    this.location.back();
+    this.router.navigate(['dashboard']);
   }
 
 }
