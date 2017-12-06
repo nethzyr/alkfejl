@@ -46,4 +46,7 @@ public class Article {
     @Column(name="thumbnail", nullable=false, length=200)
     private String thumbnail;
 
+    @Column(name="category", nullable=false, length=100)
+    private int category;
+
 }
