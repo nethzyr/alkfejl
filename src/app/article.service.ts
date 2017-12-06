@@ -88,7 +88,7 @@ export class ArticleService {
     ).toPromise();
   }
 
-  deleteArticle(id: number) {
+  deleteArticle(id: number): Promise<Article>  {
     return this.http.delete<Article>(
       `api/article/${id}`,
       httpOptions

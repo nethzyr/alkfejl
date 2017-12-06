@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 export class ArticleItemComponent implements OnInit {
 
   @Input() article: Article;
-  category: number;
+   category: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -35,6 +35,7 @@ export class ArticleItemComponent implements OnInit {
   async deleteArticle() {
     try {
       await this.articleService.deleteArticle(this.article.id);
+      this.article = new Article;
       console.log('rip', this.article.title);
     } catch (err) {
       console.log(err);

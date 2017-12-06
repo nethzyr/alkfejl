@@ -1,18 +1,19 @@
-<div class="container" *ngIf="article.category === category || category === 0 || article.id === 0">
-  <div class="row justify-content-md-center">
-    <button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" [routerLink]="['/article', article.id, 'edit']">Edit</button>
-    <button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" data-toggle="modal" data-target="#exampleModal">Delete</button>
-    <a [routerLink]="['/article', article.id ]" class="list-group-item clearfix">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ article.title }}</h4>
-      </div>
-      <span class="pull-right">
-        <img *ngIf="article.thumbnail.length > 0" [src]= article.thumbnail alt="{{ article.title }}" class="img-fluid rounded" style="max-height: 200px;">
-      </span>
-    </a>
+<div *ngIf="article.id !== 0">
+  <div class="container" *ngIf="article.category === category || category === 0">
+    <div class="row justify-content-md-center">
+      <button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" [routerLink]="['/article', article.id, 'edit']">Edit</button>
+      <button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" data-toggle="modal" data-target="#exampleModal">Delete</button>
+      <a [routerLink]="['/article', article.id ]" class="list-group-item clearfix">
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">{{ article.title }}</h4>
+        </div>
+        <span class="pull-right">
+          <img *ngIf="article.thumbnail.length > 0" [src]= article.thumbnail alt="{{ article.title }}" class="img-fluid rounded" style="max-height: 200px;">
+        </span>
+      </a>
+    </div>
   </div>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -31,3 +32,4 @@
       </div>
     </div>
   </div>
+</div>
