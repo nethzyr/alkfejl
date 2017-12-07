@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
 public class User {
 
     @OneToMany(targetEntity = Article.class, mappedBy = "user")
+    @JsonIgnore
     private List<Article> articles;
 
     @Id
