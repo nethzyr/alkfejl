@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export class Article {
     public id = 0;
     public author: String = '';
@@ -6,6 +8,7 @@ export class Article {
     public thumbnail: String = '';
     public body: String = '';
     public category = 1;
+    public user: User = new User;
 
     /*constructor(id?: number, author?: String, date?: number, title?: String, thumbnail?: String, body?: String) {
         this.id = id || 0;

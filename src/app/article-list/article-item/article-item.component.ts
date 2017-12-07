@@ -36,7 +36,6 @@ export class ArticleItemComponent implements OnInit {
     try {
       await this.articleService.deleteArticle(this.article.id);
       this.article = new Article;
-      console.log('rip', this.article.title);
     } catch (err) {
       console.log(err);
     }

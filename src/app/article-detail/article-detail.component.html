@@ -8,6 +8,6 @@
   <p>{{ article.body }}</p>
   <div class="text-right" id="date">
     <p>{{ date }}</p>
-    <p>By {{ article.author }}</p>
+    <p>By {{ article.user.firstname }} {{ article.user.lastname }}</p>
   </div>
 </div>
