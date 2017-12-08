@@ -15,7 +15,6 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ArticleEditComponent implements OnInit {
 
-  // article: Article = new Article(0, '', Date.now(), '', '', '');
   article: Article = new Article();
 
   constructor(
@@ -41,9 +40,7 @@ export class ArticleEditComponent implements OnInit {
     }
     if (this.article.id > 0) {
       await this.articleService.editArticle(this.article.id, this.article);
-    }/* else {
-      await this.articleService.addIssue(art);
-    }*/
+    }
     this.router.navigate(['dashboard']);
   }
 

@@ -5,6 +5,7 @@ import { MainPageComponent } from '../main-page/main-page.component';
 import { ArticleDetailComponent } from '../article-detail/article-detail.component';
 import { AuthGuard } from '../auth.guard';
 import { ArticleEditComponent } from '../article-edit/article-edit.component';
+import { ArticleAddComponent } from '../article-add/article-add.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,7 +33,14 @@ const routes: Routes = [{
   pathMatch: 'full',
   canActivate: [AuthGuard],
   data: {roles: ['ADMIN']}
-}
+},
+{
+  path: 'new',
+  component: ArticleAddComponent,
+  pathMatch: 'full',
+  canActivate: [AuthGuard],
+  data: {roles: ['ADMIN', 'EDITOR']}
+},
 ];
 
 @NgModule({

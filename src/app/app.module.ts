@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './menu/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
+import { ArticleAddComponent } from './article-add/article-add.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ArticleEditComponent } from './article-edit/article-edit.component';
     ArticleDetailComponent,
     LoginComponent,
     ArticleEditComponent,
+    ArticleAddComponent,
   ],
   imports: [
     BrowserModule,

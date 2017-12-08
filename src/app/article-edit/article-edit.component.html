@@ -4,7 +4,7 @@
         <textarea spellcheck="false" cols="40" rows="2" type="text" name="title" [(ngModel)]="article.title" class="form-control" id="title" placeholder="Title" required></textarea>
         <div class="row">
           <div class="col">
-              <img [src]= article.thumbnail alt="{{ article.title }}" class="img-fluid rounded" style="max-height: 200px;">
+              <img [src]=article.thumbnail onError="this.src='https://cms-assets.tutsplus.com/uploads/users/30/posts/25489/image/pac-404.png'" alt="{{ article.title }}" class="img-fluid rounded" style="max-height: 200px;">
           </div>
           <div class="col">
             <div class="form-group">
@@ -17,7 +17,7 @@
         <textarea spellcheck="false" cols="40" rows="15" type="text" name="body" [(ngModel)]="article.body" class="form-control" id="body" placeholder="Body" required></textarea>
       </div>
       <div class="form-group">
-        <label>Kategória</label>
+        <label>Category</label>
         <select class="form-control" name="category" id="category" [(ngModel)]="article.category">
           <option value=1>Tech</option>
           <option value=2>Science</option>

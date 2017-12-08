@@ -1,4 +1,9 @@
 <ul class="nav navbar-nav navbar-right">
+  <ul class="navbar-nav mr-auto" *ngIf="authService.user.role === 'ADMIN' || authService.user.role === 'EDITOR'">
+    <li class="nav-item active">
+      <a class="nav-link" [routerLink]="['/new']"><b>Create Article</b></a>
+    </li>
+  </ul>
   <div *ngIf="!authService.isLoggedIn">
     <li class="dropdown">
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
