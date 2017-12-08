@@ -50,6 +50,13 @@ public class ArticleController {
         return ResponseEntity.ok(updated);
     }
 
+    @PostMapping("/new")
+    public  ResponseEntity<Article> add(@RequestBody Article article) {
+        System.out.println(article.toString());
+        Article updated = articleService.add(article);
+        return ResponseEntity.ok(updated);
+    }
+
     @Role(ADMIN)
     @DeleteMapping("/{id}")
     private ResponseEntity delete(@PathVariable long id) {

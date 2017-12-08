@@ -32,6 +32,10 @@ public class ArticleService {
     public void delete(long id) {
         articleRepository.delete(id);
     }
+
+    public Article add(Article article) {
+        return articleRepository.save(article);
+    }
    
     public Article edit(long id, Article article) {
         Article currentArticle = articleRepository.findOne(id);
