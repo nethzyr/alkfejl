@@ -28,12 +28,7 @@ import lombok.NoArgsConstructor;
 public class User {
     
    @ManyToMany
-    @JoinTable(name="USER_ARTICLE",
-        joinColumns=
-            @JoinColumn(name="USER", referencedColumnName="ID"),
-        inverseJoinColumns=
-            @JoinColumn(name="ARTICLE", referencedColumnName="ID")
-        )
+    @JoinTable(name="USER_ARTICLE")
     @JsonIgnore
     private List<Article> articles;
     
