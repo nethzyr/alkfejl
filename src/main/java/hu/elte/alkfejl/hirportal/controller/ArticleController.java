@@ -50,7 +50,7 @@ public class ArticleController {
         return ResponseEntity.ok(updated);
     }
 
-    @PostMapping("/new")
+    @PutMapping("/new")
     public  ResponseEntity<Article> add(@RequestBody Article article) {
         System.out.println(article.toString());
         Article updated = articleService.add(article);
