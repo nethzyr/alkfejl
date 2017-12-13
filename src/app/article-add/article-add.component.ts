@@ -24,7 +24,7 @@ export class ArticleAddComponent implements OnInit {
   }
 
   async submit(f) {
-    console.log(this.article);
+    this.article.author = this.article.user.username;
     if (f.invalid) {
       return;
     }

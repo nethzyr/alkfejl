@@ -34,8 +34,9 @@ export class ArticleService {
   }
 
   addArticle(article: Article): Promise<Article> {
-    return this.http.post<Article>(
+    return this.http.put<Article>(
       `api/article/new`,
+      article,
       httpOptions
     ).toPromise();
   }
