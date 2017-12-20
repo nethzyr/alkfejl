@@ -1,0 +1,29 @@
+<div class="container">
+  <form class="form" role="form" method="post" accept-charset="UTF-8" id="edit-nav" (submit)="submit(f)" #f="ngForm">
+      <div class="form-group">
+        <textarea spellcheck="false" cols="40" rows="1" type="text" name="title" [(ngModel)]="user.username" class="form-control" id="title" placeholder="Title" required></textarea>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <textarea spellcheck="false" cols="40" rows="1"type="text" name="thumbnail" [(ngModel)]="user.firstname" class="form-control" id="thumbnail" placeholder="Thumbnail URL" required></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea spellcheck="false" cols="40" rows="1" type="text" name="body" [(ngModel)]="user.lastname" class="form-control" id="body" placeholder="Body" required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select class="form-control" name="category" id="category" [(ngModel)]="user.role">
+          <option value=ADMIN>Admin</option>
+          <option value=EDITOR>Editor</option>
+          <option value=READER>Reader</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-basic">Submit</button>
+      </div>
+    </form>
+  </div>
+  

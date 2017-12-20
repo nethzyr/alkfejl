@@ -6,6 +6,7 @@ import { ArticleDetailComponent } from '../article-detail/article-detail.compone
 import { AuthGuard } from '../auth.guard';
 import { ArticleEditComponent } from '../article-edit/article-edit.component';
 import { ArticleAddComponent } from '../article-add/article-add.component';
+import { UserEditComponent } from '../user-edit/user-edit.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,7 +33,7 @@ const routes: Routes = [{
   component: ArticleEditComponent,
   pathMatch: 'full',
   canActivate: [AuthGuard],
-  data: {roles: ['ADMIN']}
+  data: {roles: ['ADMIN', 'EDITOR']}
 },
 {
   path: 'new',
@@ -41,6 +42,13 @@ const routes: Routes = [{
   canActivate: [AuthGuard],
   data: {roles: ['ADMIN', 'EDITOR']}
 },
+{
+  path: 'user/list',
+  component: UserEditComponent,
+  pathMatch: 'full',
+  canActivate: [AuthGuard],
+  data: {roles: ['ADMIN']}
+}
 ];
 
 @NgModule({

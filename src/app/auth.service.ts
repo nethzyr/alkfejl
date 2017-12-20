@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
 import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders(
@@ -13,6 +14,7 @@ export class AuthService {
 
   isLoggedIn = false;
   user: User = new User;
+  users: User[] = [];
 
   constructor(
     private http: HttpClient
@@ -58,6 +60,18 @@ export class AuthService {
       })
     )
     .toPromise();
+  }
+
+  editUser(id: number, user: User): Promise<User> {
+    return this.http.put<User>(
+      `api/user/${id}`,
+      user,
+      httpOptions
+    ).toPromise();
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>('api/user/list');
   }
 
 }

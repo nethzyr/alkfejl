@@ -19,6 +19,8 @@ import { ArticleAddComponent } from './article-add/article-add.component';
 import { NgmodalComponent } from './ngmodal/ngmodal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './menu/register/register.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { UserEditDetailComponent } from './user-edit/user-edit-detail/user-edit-detail.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { RegisterComponent } from './menu/register/register.component';
     ArticleAddComponent,
     NgmodalComponent,
     RegisterComponent,
+    UserEditComponent,
+    UserEditDetailComponent,
   ],
   imports: [
     BrowserModule,

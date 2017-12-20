@@ -41,7 +41,6 @@ export class ArticleEditComponent implements OnInit {
     if (this.article.id > 0) {
       await this.articleService.editArticle(this.article.id, this.article);
     }
-    this.router.navigate(['dashboard']);
   }
 
 }

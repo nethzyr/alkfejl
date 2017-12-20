@@ -3,6 +3,9 @@
     <li class="nav-item active">
       <a class="nav-link" [routerLink]="['/new']"><b>Create Article</b></a>
     </li>
+    <li class="nav-item active" *ngIf="authService.user.role === 'ADMIN'">
+      <a class="nav-link" [routerLink]="['user/list']"><b>Edit users</b></a>
+    </li>
   </ul>
   <div *ngIf="!authService.isLoggedIn">
     <li class="dropdown">
