@@ -117,5 +117,10 @@ Use case story:
 
 ![db](usecase.png)
 
+Fejlesztési lehetőségek:
 
+    • cikkek kategorizálása
+    • READER szerepkör felhasználóbaráttá tétele
+         • kommentelés
+         • kedvencek menüpont
 
