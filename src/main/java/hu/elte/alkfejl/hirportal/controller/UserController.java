@@ -1,5 +1,7 @@
 package hu.elte.alkfejl.hirportal.controller;
 
+import hu.elte.alkfejl.hirportal.annotation.Role;
+import hu.elte.alkfejl.hirportal.entity.Article;
 import hu.elte.alkfejl.hirportal.entity.User;
 import hu.elte.alkfejl.hirportal.service.UserService;
 import hu.elte.alkfejl.hirportal.exception.UserNotValidException;
@@ -8,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import static hu.elte.alkfejl.hirportal.entity.User.Role.ADMIN;
 
 @RestController
 @RequestMapping("/api/user")
@@ -46,10 +50,8 @@ public class UserController {
     }
     
     @GetMapping("/list")
-    public String userList(Model model) {
-        model.addAttribute("title", "User list");
-        model.addAttribute("users", userService.userNamesStartingWith(""));
-        return "userlist";
+    public ResponseEntity<Iterable<User>> list() {
+        return ResponseEntity.ok(userService.list());
     }
 
     @GetMapping("/greeting")
@@ -60,5 +62,12 @@ public class UserController {
     
     private String redirectToGreeting(@ModelAttribute User user) {
         return "redirect:/user/greeting?name=" + user.getFirstname();
+    }
+
+    @Role(ADMIN)
+    @PutMapping("/{id}")
+    private ResponseEntity<User> edit(@PathVariable long id, @RequestBody User user) {
+        User updated = userService.edit(id, user);
+        return ResponseEntity.ok(updated);
     }
 }

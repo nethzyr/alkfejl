@@ -43,7 +43,7 @@ public class ArticleController {
         return ResponseEntity.ok(read.iterator().next());
     }
 
-    @Role(ADMIN)
+    @Role({ADMIN, EDITOR})
     @PutMapping("/{id}")
     private ResponseEntity<Article> edit(@PathVariable long id, @RequestBody Article article) {
         Article updated = articleService.edit(id, article);

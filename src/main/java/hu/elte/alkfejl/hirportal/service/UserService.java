@@ -1,5 +1,6 @@
 package hu.elte.alkfejl.hirportal.service;
 
+import hu.elte.alkfejl.hirportal.entity.Article;
 import hu.elte.alkfejl.hirportal.entity.User;
 import hu.elte.alkfejl.hirportal.exception.UserNotValidException;
 import hu.elte.alkfejl.hirportal.repository.UserRepository;
@@ -21,6 +22,14 @@ public class UserService {
        
     public List<User> userNamesStartingWith(String segment) {
         return userRepository.findByFirstNameSegment(segment);
+    }
+
+    public User edit(long id, User user) {
+        return this.user = userRepository.save(user);
+    }
+
+    public Iterable<User> list() {
+        return userRepository.findAll();
     }
 
     public User register(User user) {
