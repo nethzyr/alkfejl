@@ -65,7 +65,50 @@ Szerepkörök:
     
     • Olvasó: Böngészheti a meglévő cikkeket, és képeket.
     
+Funkcionális követelmények:
+
+    • regisztráció
+    • bejelentkezés
+    • cikkek böngészése
+    • új cikk létrehozása (author jogot igényel)
+    • meglévő cikk szerkesztése (author jogot igényel)
+    • cikk törlése (admin jogot igényel)
+    
+Nem funkcionális követelmények:
+
+    • gyorsaság
+    • biztonság
+    • megbízhatóság
+    • könnyű kezelés
+    
+Fejlesztői dokumentáció:
+
+Fejlesztői környezet:
+
+    • NetBeans fejlesztői környezet
+    • Spring MVC – Spring Boot technológia
+    • Maven 
+    • H2 adatbázis
+    • Git, GitHub verziókövető rendszer
+    
 Adatbázis(terv):
 
 ![db](asd.png)
+
+Több a többhöz kapcsolat létesítése a felhasználók, és a cikkek között, továbbá minden felhasználóhoz tartozik egy szerepkör(egy a többhöz kapcsolat).
+Több a többhöz kapcsolat megvalósítása egy kapcsolótáblával.
+
+TODO: rulez tábla esetén stackoverflow bejelentkezés, és regisztrációkor...
+
+Végpontok:
+
+User:
+    • GET /api/user
+    • POST /api/user/login :  bejelentkezés
+    • POST /api/user/logout :  kijelentkezés
+    • POST /api/user/register : regisztráció
+
+
+
+
 
