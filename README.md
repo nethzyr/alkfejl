@@ -113,7 +113,9 @@ Article:
     • DELETE /api/article/{id} :  cikk törlése
     • PUT /api/eticle : új cikk
 
+Use case story:
 
+![db](usecase.png)
 
 
 
