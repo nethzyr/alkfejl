@@ -67,3 +67,5 @@ Szerepkörök:
     
 Adatbázis(terv):
 
+![db](asd.png)
+
