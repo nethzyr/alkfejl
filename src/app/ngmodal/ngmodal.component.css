@@ -1,0 +1,15 @@
+.dark-modal .btn-basic{
+    cursor: pointer;
+}
+.dark-modal .btn-basic:hover{
+    color: #fff;
+    background-color:#59b5fa;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+.dark-modal .close {
+    color: white;
+}

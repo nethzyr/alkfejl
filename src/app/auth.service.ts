@@ -44,4 +44,20 @@ export class AuthService {
     ).toPromise();
   }
 
+  register(user: User) {
+    return this.http.post<User>(
+      // 'http://localhost:4200/api/user/login',
+      'api/user/register',
+      user,
+      httpOptions
+    ).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap((user: User) => {
+        this.isLoggedIn = true;
+        this.user = user;
+      })
+    )
+    .toPromise();
+  }
+
 }

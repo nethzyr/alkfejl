@@ -16,6 +16,9 @@ import { LoginComponent } from './menu/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { ArticleAddComponent } from './article-add/article-add.component';
+import { NgmodalComponent } from './ngmodal/ngmodal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterComponent } from './menu/register/register.component';
 
 
 @NgModule({
@@ -29,12 +32,15 @@ import { ArticleAddComponent } from './article-add/article-add.component';
     LoginComponent,
     ArticleEditComponent,
     ArticleAddComponent,
+    NgmodalComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   providers: [ArticleService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

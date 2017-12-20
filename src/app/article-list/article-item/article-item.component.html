@@ -2,7 +2,7 @@
   <div class="container" *ngIf="article.category === category || category === 0">
     <div class="row justify-content-md-center">
       <button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" [routerLink]="['/article', article.id, 'edit']">Edit</button>
-      <button type="btn" class="btn btn-basic" *ngIf="authService.user.role === 'ADMIN'" data-toggle="modal" data-target="#deleteModal">Delete</button>
+      <app-ngmodal *ngIf="authService.user.role === 'ADMIN'" [article]="article"></app-ngmodal>
       <a [routerLink]="['/article', article.id ]" class="list-group-item clearfix">
         <div class="pull-left">
           <h4 class="list-group-item-heading">{{ article.title }}</h4>
@@ -28,7 +28,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" (click)="deleteArticle()" data-dismiss="modal">Delete!</button>
+          <button type="button" class="btn-primary" ng-click="deleteArticle(); c('Close click')" data-dismiss="modal">Delete!</button>
         </div>
       </div>
     </div>

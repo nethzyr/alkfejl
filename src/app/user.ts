@@ -5,6 +5,8 @@ export class User {
     public password: String;
     public role: String;
     public username: String;
+    public firstname = this.firstName;
+    public lastname = this.lastName;
 
     constructor(
         id?: number,
@@ -20,5 +22,7 @@ export class User {
         this.password = password || '';
         this.role = role || 'GUEST';
         this.username = username || '';
+        this.firstname = this.firstName;
+        this.lastname = this.lastName;
     }
 }
