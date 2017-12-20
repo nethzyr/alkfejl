@@ -54,7 +54,8 @@ Szakterületi fogalmak:
 
     • Cikk: Önálló írás egy újságban, írott sajtóban közölt írás egy témában.
     
-    • Hírportál: Egy honlap, amely a nyomtatott újságot valósítja meg számítógéppel elérhető, olvasható és kinyomtatható formában.
+    • Hírportál: Egy honlap, amely a nyomtatott újságot valósítja meg számítógéppel elérhető, 
+                 olvasható és kinyomtatható formában.
     
     • Archívum: Írott vagy más formában rögzített adatok tárolására használt hely.
     
@@ -63,3 +64,6 @@ Szerepkörök:
     • Munkatárs: Bejelentkezés után új cikket tölthet fel, meglévőt szerkeszthet, vagy törölhet.
     
     • Olvasó: Böngészheti a meglévő cikkeket, és képeket.
+    
+Adatbázis(terv):
+
