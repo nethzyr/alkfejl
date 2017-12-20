@@ -107,6 +107,11 @@ User:
     • POST /api/user/login :  bejelentkezés
     • POST /api/user/logout :  kijelentkezés
     • POST /api/user/register : regisztráció
+    
+Article:
+    • GET /api/article/list : cikkek
+    • DELETE /api/article/{id} :  cikk törlése
+    • PUT /api/eticle : új cikk
 
 
 
